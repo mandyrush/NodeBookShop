@@ -34,7 +34,8 @@ exports.postAddProduct = (req, res, next) => {
   const price = req.body.price;
   const imageUrl = req.body.imageUrl;
   const description = req.body.description;
-  Product.create({
+  req.user
+  .createProduct({
     title: title,
     price: price,
     imageUrl: imageUrl,
@@ -47,7 +48,6 @@ exports.postAddProduct = (req, res, next) => {
   .catch(error => {
     console.log(error);
   })
-  
 };
 
 exports.postEditProduct = (req, res, next) => {
