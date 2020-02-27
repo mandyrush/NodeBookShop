@@ -2,9 +2,9 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const errorController = require('./controllers/error');
-const mongoConnect = require('./util/database').mongoConnect;
 const User = require('./models/user');
 
 const app = express();
@@ -19,9 +19,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
-    User.findById('5e56b2ad71feff59d32705fb')
+    User.findById('5e58056590f62796f1a5f882')
     .then(user => {
-        req.user = new User(user.name, user.email, user.cart, user._id);
+        req.user = user;
         next();
     })
     .catch(error => {
@@ -34,6 +34,24 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-mongoConnect(() => {
+mongoose
+.connect('mongodb+srv://Amanda:LC1IqG4Kuel4WXcd@cluster0-uztqh.mongodb.net/shop?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true')
+.then(result => {
+    User.findOne()
+        .then(user => {
+            if(!user) {
+                const user = new User({
+                    name: 'Amanda',
+                    email: 'test@test.com',
+                    cart: {
+                        items: []
+                    }
+                })
+                user.save();
+            }
+        })
     app.listen(3000);
+})
+.catch(error => {
+    console.log(error);
 })
