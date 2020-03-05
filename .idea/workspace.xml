@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e94b604-fa0b-4040-b01e-e2528dc39f0a" name="Default Changelist" comment="Add user authentication and flash messages">
+    <list default="true" id="2e94b604-fa0b-4040-b01e-e2528dc39f0a" name="Default Changelist" comment="Revert &quot;Install sendGrid and set up email to user after signup&quot;&#10;&#10;This reverts commit d7bc69c121227eae4522a29798ed5e1b68155f86.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
@@ -63,36 +63,22 @@
       <updated>1581458441046</updated>
       <workItem from="1581458443454" duration="92000" />
       <workItem from="1583343505832" duration="7004000" />
-      <workItem from="1583361057476" duration="4828000" />
-      <workItem from="1583369361401" duration="274000" />
-      <workItem from="1583428654142" duration="996000" />
+      <workItem from="1583361057476" duration="4725000" />
     </task>
-    <task id="LOCAL-00001" summary="Add user authentication and flash messages">
-      <created>1583367889473</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583367889473</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add user authentication and flash messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user authentication and flash messages" />
   </component>
   <component name="WindowStateProjectService">
     <state x="448" y="271" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583343577704">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="448" y="271" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877@0.23.1440.877" timestamp="1583343577704" />
-    <state x="0" y="23" width="1440" height="877" key="CommitChangelistDialog2" timestamp="1583367907894">
+    <state x="0" y="23" width="1440" height="877" key="CommitChangelistDialog2" timestamp="1583431842302">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="0" y="23" width="1440" height="877" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1583367907894" />
+    <state x="0" y="23" width="1440" height="877" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1583431842302" />
     <state x="144" y="100" key="DiffContextDialog" timestamp="1583362944023">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -101,9 +87,5 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1583366900303" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1583367896155">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1583367896155" />
   </component>
 </project>
