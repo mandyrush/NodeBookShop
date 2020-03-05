@@ -11,8 +11,7 @@ const flash = require('connect-flash');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_URI =
-  'mongodb+srv://Amanda:LC1IqG4Kuel4WXcd@cluster0-uztqh.mongodb.net/shop?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true';
+const MONGODB_URI = `${process.env.MONGO_URI}`;
 
 const app = express();
 const store = new MongoDBStore({
@@ -70,7 +69,7 @@ app.use(errorController.get404);
 mongoose
 .connect(MONGODB_URI)
 .then(result => {
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
 })
 .catch(error => {
     console.log(error);
