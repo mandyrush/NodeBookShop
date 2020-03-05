@@ -7,8 +7,7 @@ exports.getIndex = (req, res, next) => {
     res.render('shop/index', {
       prods: products,
       pageTitle: 'Shop',
-      path: '/',
-      isAuthenticated: req.session.isLoggedIn
+      path: '/'
     });
   })
   .catch(error => {
@@ -47,7 +46,7 @@ exports.getProduct = (req, res, next) => {
 
 exports.getCart = (req, res, next) => {
   req.user
-    .populate('cart.items.productId')  
+    .populate('cart.items.productId')
     .execPopulate()
     .then(user => {
       const products = user.cart.items;
@@ -116,7 +115,7 @@ exports.postOrder = (req, res, next) => {
       const order = new Order({
         products: products,
         user: {
-          name: req.user.name,
+          email: req.user.email,
           userId: req.user
         }
       });
