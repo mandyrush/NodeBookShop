@@ -11,6 +11,8 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    resetToken: String,
+    resetTokenExpiration: Date,
     cart: {
         items: [
             {
@@ -48,22 +50,22 @@ userSchema.methods.addToCart = function(product) {
     }
     const updatedCart = {
         items: updatedCartItems
-    }
+    };
     this.cart = updatedCart;
     return this.save();
-}
+};
 
 userSchema.methods.removeFromCart = function(productId) {
     const updatedCartItems = this.cart.items.filter(item => {
         return item.productId.toString() !== productId.toString();
-    })
+    });
     this.cart.items = updatedCartItems;
     return this.save();
-}
+};
 
 userSchema.methods.clearCart = function() {
     this.cart = { items: [] };
     return this.save();
-}
+};
 
 module.exports = mongoose.model('User', userSchema);
