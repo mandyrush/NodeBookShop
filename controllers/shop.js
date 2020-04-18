@@ -42,7 +42,7 @@ exports.getProduct = (req, res, next) => {
     });
   })
   .catch(error => console.log(error));
-}
+};
 
 exports.getCart = (req, res, next) => {
   req.user
@@ -72,7 +72,7 @@ exports.postDeleteCartProduct = (req, res, next) => {
     .catch(error => {
       console.log(error);
     })
-}
+};
 
 exports.postCart = (req, res, next) => {
   const prodId = req.body.productId;
@@ -102,7 +102,7 @@ exports.getOrders = (req, res, next) => {
     .catch(error => {
       console.log(error);
     })
-}
+};
 
 exports.postOrder = (req, res, next) => {
   req.user
@@ -130,7 +130,7 @@ exports.postOrder = (req, res, next) => {
     .catch(error => {
       console.log(error);
     })
-}
+};
 
 // exports.getCheckout = (req, res, next) => {
 //   res.render('shop/checkout', {
